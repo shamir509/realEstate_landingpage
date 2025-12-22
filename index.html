@@ -9,13 +9,6 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- React & ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel Standalone for JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -30,444 +23,375 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <!-- Hero Section -->
+        <div class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img 
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" 
+                    alt="Modern Luxury Home"
+                    class="w-full h-full object-cover opacity-30"
+                />
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/85 to-slate-900/90"></div>
+            </div>
 
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-        const { Home, MapPin, TrendingUp, Award, Check, Building2, Sparkles } = lucide;
+            <div class="absolute inset-0 overflow-hidden z-0">
+                <div class="absolute w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+                <div class="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse" style="animation-delay: 1s;"></div>
+            </div>
 
-        const LuxuryRealEstateLanding = () => {
-            const [formSubmitted, setFormSubmitted] = useState(false);
-            const [formData, setFormData] = useState({
-                name: '',
-                email: '',
-                phone: '',
-                propertyType: 'buy',
-                budget: '',
-                message: ''
-            });
-            const [isVisible, setIsVisible] = useState(false);
-
-            useEffect(() => {
-                setIsVisible(true);
-                lucide.createIcons();
-                
-                // Meta Pixel Code
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-                
-                // ⚠️ IMPORTANT: Replace 'YOUR_PIXEL_ID' with your actual Meta Pixel ID
-                window.fbq('init', 'YOUR_PIXEL_ID');
-                window.fbq('track', 'PageView');
-            }, []);
-
-            useEffect(() => {
-                lucide.createIcons();
-            }, [formSubmitted]);
-
-            const handleInputChange = (e) => {
-                setFormData({
-                    ...formData,
-                    [e.target.name]: e.target.value
-                });
-            };
-
-            const handleSubmit = (e) => {
-                e.preventDefault();
-                
-                // Meta Pixel - Track Lead Event
-                if (window.fbq) {
-                    window.fbq('track', 'Lead', {
-                        content_name: 'Real Estate Inquiry',
-                        content_category: formData.propertyType,
-                        value: formData.budget,
-                        currency: 'INR'
-                    });
-                }
-                
-                // Here you can also send data to your backend/CRM
-                console.log('Form Data:', formData);
-                
-                setFormSubmitted(true);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
-
-            if (formSubmitted) {
-                return (
-                    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
-                        <div className="absolute inset-0 z-0">
-                            <img 
-                                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" 
-                                alt="Luxury Property"
-                                className="w-full h-full object-cover opacity-20"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95"></div>
-                        </div>
-
-                        <div className="max-w-2xl w-full text-center relative z-10">
-                            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10 shadow-2xl">
-                                <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-500/50">
-                                    <i data-lucide="check" className="w-10 h-10 text-white"></i>
-                                </div>
-                                <h1 className="text-4xl md:text-5xl font-light text-white mb-4 tracking-wide">
-                                    धन्यवाद
-                                </h1>
-                                <h2 className="text-3xl text-slate-200 mb-6">Thank You</h2>
-                                <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                                    Your inquiry has been received. Our property consultant will contact you within 24 hours to discuss your requirements.
-                                </p>
-                                <div className="space-y-3 text-slate-400 mb-10">
-                                    <p className="flex items-center justify-center gap-2">
-                                        <i data-lucide="check" className="w-5 h-5 text-amber-400"></i>
-                                        Premium property portfolio access
-                                    </p>
-                                    <p className="flex items-center justify-center gap-2">
-                                        <i data-lucide="check" className="w-5 h-5 text-amber-400"></i>
-                                        Personalized recommendations in Ranchi
-                                    </p>
-                                    <p className="flex items-center justify-center gap-2">
-                                        <i data-lucide="check" className="w-5 h-5 text-amber-400"></i>
-                                        Site visit arrangements
-                                    </p>
-                                </div>
-                                <button
-                                    onClick={() => setFormSubmitted(false)}
-                                    className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full font-medium hover:from-amber-600 hover:to-amber-700 transition-all duration-300 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105"
-                                >
-                                    Return to Home
-                                </button>
-                            </div>
-                        </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center z-10">
+                <div class="animate-fade-in">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
+                        <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+                        <span class="text-sm text-slate-200">Ranchi's Premier Real Estate</span>
                     </div>
-                );
-            }
+                    
+                    <h1 class="text-5xl md:text-7xl font-light mb-6 leading-tight">
+                        Find Your
+                        <span class="block bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent font-normal">
+                            Dream Property
+                        </span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-300 mb-8 leading-relaxed max-w-xl">
+                        Discover premium residential and commercial properties in Ranchi's most sought-after locations. From luxury villas to modern apartments, we bring you the finest real estate opportunities.
+                    </p>
 
-            return (
-                <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-                    {/* Hero Section */}
-                    <div className="relative min-h-screen flex items-center overflow-hidden">
-                        <div className="absolute inset-0 z-0">
-                            <img 
-                                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" 
-                                alt="Modern Luxury Home"
-                                className="w-full h-full object-cover opacity-30"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/85 to-slate-900/90"></div>
+                    <div class="grid grid-cols-3 gap-6 mb-12">
+                        <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                            <div class="text-3xl font-light text-amber-400 mb-1">250+</div>
+                            <div class="text-xs text-slate-400">Premium Properties</div>
                         </div>
-
-                        <div className="absolute inset-0 overflow-hidden z-0">
-                            <div className="absolute w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
-                            <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                            <div class="text-3xl font-light text-amber-400 mb-1">₹500Cr+</div>
+                            <div class="text-xs text-slate-400">Properties Sold</div>
                         </div>
-
-                        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center z-10">
-                            <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
-                                    <i data-lucide="award" className="w-4 h-4 text-amber-400"></i>
-                                    <span className="text-sm text-slate-200">Ranchi's Premier Real Estate</span>
-                                </div>
-                                
-                                <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
-                                    Find Your
-                                    <span className="block bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent font-normal">
-                                        Dream Property
-                                    </span>
-                                </h1>
-                                
-                                <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-xl">
-                                    Discover premium residential and commercial properties in Ranchi's most sought-after locations. From luxury villas to modern apartments, we bring you the finest real estate opportunities.
-                                </p>
-
-                                <div className="grid grid-cols-3 gap-6 mb-12">
-                                    <div className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                                        <div className="text-3xl font-light text-amber-400 mb-1">250+</div>
-                                        <div className="text-xs text-slate-400">Premium Properties</div>
-                                    </div>
-                                    <div className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                                        <div className="text-3xl font-light text-amber-400 mb-1">₹500Cr+</div>
-                                        <div className="text-xs text-slate-400">Properties Sold</div>
-                                    </div>
-                                    <div className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                                        <div className="text-3xl font-light text-amber-400 mb-1">95%</div>
-                                        <div className="text-xs text-slate-400">Happy Clients</div>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap gap-4">
-                                    <div className="flex items-center gap-2 text-slate-300 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                                        <i data-lucide="map-pin" className="w-5 h-5 text-amber-400"></i>
-                                        <span className="text-sm">Prime Locations</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-slate-300 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                                        <i data-lucide="trending-up" className="w-5 h-5 text-amber-400"></i>
-                                        <span className="text-sm">High ROI</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-slate-300 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                                        <i data-lucide="home" className="w-5 h-5 text-amber-400"></i>
-                                        <span className="text-sm">RERA Approved</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                                <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-                                    <div className="text-center mb-8">
-                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl mb-4 shadow-lg shadow-amber-500/30">
-                                            <i data-lucide="sparkles" className="w-8 h-8 text-white"></i>
-                                        </div>
-                                        <h2 className="text-3xl font-light mb-2">Get Started Today</h2>
-                                        <p className="text-slate-300">Connect with our property experts</p>
-                                    </div>
-
-                                    <div className="space-y-5">
-                                        <div>
-                                            <label className="block text-sm text-slate-200 mb-2 font-medium">Full Name *</label>
-                                            <input
-                                                type="text"
-                                                name="name"
-                                                required
-                                                value={formData.name}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400"
-                                                placeholder="Enter your name"
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <label className="block text-sm text-slate-200 mb-2 font-medium">Email Address *</label>
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                required
-                                                value={formData.email}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400"
-                                                placeholder="your@email.com"
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <label className="block text-sm text-slate-200 mb-2 font-medium">Phone Number *</label>
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                required
-                                                value={formData.phone}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400"
-                                                placeholder="+91 98765 43210"
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <label className="block text-sm text-slate-200 mb-2 font-medium">I'm Looking To *</label>
-                                            <select
-                                                name="propertyType"
-                                                value={formData.propertyType}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white"
-                                            >
-                                                <option value="buy" className="bg-slate-800">Buy a Property</option>
-                                                <option value="sell" className="bg-slate-800">Sell a Property</option>
-                                                <option value="rent" className="bg-slate-800">Rent a Property</option>
-                                                <option value="invest" className="bg-slate-800">Investment Opportunity</option>
-                                            </select>
-                                        </div>
-
-                                        <div>
-                                            <label className="block text-sm text-slate-200 mb-2 font-medium">Budget Range *</label>
-                                            <select
-                                                name="budget"
-                                                value={formData.budget}
-                                                onChange={handleInputChange}
-                                                required
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white"
-                                            >
-                                                <option value="" className="bg-slate-800">Select your budget</option>
-                                                <option value="20-40" className="bg-slate-800">₹20 Lakh - ₹40 Lakh</option>
-                                                <option value="40-60" className="bg-slate-800">₹40 Lakh - ₹60 Lakh</option>
-                                                <option value="60-80" className="bg-slate-800">₹60 Lakh - ₹80 Lakh</option>
-                                                <option value="80-1cr" className="bg-slate-800">₹80 Lakh - ₹1 Crore</option>
-                                                <option value="1cr-2cr" className="bg-slate-800">₹1 Crore - ₹2 Crore</option>
-                                                <option value="2cr+" className="bg-slate-800">₹2 Crore+</option>
-                                            </select>
-                                        </div>
-
-                                        <div>
-                                            <label className="block text-sm text-slate-200 mb-2 font-medium">Message (Optional)</label>
-                                            <textarea
-                                                name="message"
-                                                value={formData.message}
-                                                onChange={handleInputChange}
-                                                rows="3"
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400 resize-none"
-                                                placeholder="Tell us about your requirements..."
-                                            ></textarea>
-                                        </div>
-
-                                        <button
-                                            onClick={handleSubmit}
-                                            className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-300 shadow-lg shadow-amber-500/40 hover:shadow-amber-500/60 hover:scale-[1.02] active:scale-[0.98]"
-                                        >
-                                            Schedule Free Consultation
-                                        </button>
-
-                                        <p className="text-xs text-slate-400 text-center leading-relaxed">
-                                            By submitting, you agree to receive updates about properties and market insights. Your information is secure and confidential.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                            <div class="text-3xl font-light text-amber-400 mb-1">95%</div>
+                            <div class="text-xs text-slate-400">Happy Clients</div>
                         </div>
                     </div>
 
-                    {/* Property Showcase */}
-                    <div className="relative py-20 border-t border-white/10">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="text-center mb-16">
-                                <h2 className="text-4xl font-light mb-4">Featured Properties</h2>
-                                <p className="text-slate-400 text-lg">Explore our handpicked selection</p>
-                            </div>
-
-                            <div className="grid md:grid-cols-3 gap-8">
-                                {[
-                                    {
-                                        img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                                        title: "Luxury Villa",
-                                        location: "Harmu, Ranchi",
-                                        price: "₹2.5 Cr"
-                                    },
-                                    {
-                                        img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                                        title: "Modern Apartment",
-                                        location: "Morabadi, Ranchi",
-                                        price: "₹65 Lakh"
-                                    },
-                                    {
-                                        img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
-                                        title: "Penthouse Suite",
-                                        location: "Ashok Nagar, Ranchi",
-                                        price: "₹1.8 Cr"
-                                    }
-                                ].map((property, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="group bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20"
-                                    >
-                                        <div className="relative h-64 overflow-hidden">
-                                            <img 
-                                                src={property.img} 
-                                                alt={property.title}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
-                                            <div className="absolute bottom-4 left-4 right-4">
-                                                <h3 className="text-xl font-medium mb-1 text-white">{property.title}</h3>
-                                                <p className="text-sm text-slate-300 flex items-center gap-1">
-                                                    <i data-lucide="map-pin" className="w-4 h-4"></i>
-                                                    {property.location}
-                                                </p>
-                                            </div>
-                                            <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                                {property.price}
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 text-slate-300 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-amber-400"></i>
+                            <span class="text-sm">Prime Locations</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-amber-400"></i>
+                            <span class="text-sm">High ROI</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                            <i data-lucide="home" class="w-5 h-5 text-amber-400"></i>
+                            <span class="text-sm">RERA Approved</span>
                         </div>
                     </div>
-
-                    {/* Features */}
-                    <div className="relative py-20 border-t border-white/10">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="text-center mb-16">
-                                <h2 className="text-4xl font-light mb-4">Why Choose Us</h2>
-                                <p className="text-slate-400 text-lg">Your trusted partner in Ranchi real estate</p>
-                            </div>
-
-                            <div className="grid md:grid-cols-3 gap-8">
-                                {[
-                                    {
-                                        icon: "map-pin",
-                                        title: "Premium Locations",
-                                        description: "Access to properties in Ranchi's most desirable areas including Harmu, Morabadi, Ashok Nagar, and upcoming localities."
-                                    },
-                                    {
-                                        icon: "award",
-                                        title: "Expert Guidance",
-                                        description: "Our experienced team provides comprehensive support from property selection to documentation and legal clearance."
-                                    },
-                                    {
-                                        icon: "trending-up",
-                                        title: "Transparent Pricing",
-                                        description: "No hidden costs. We provide clear, competitive pricing with detailed property reports and market analysis."
-                                    }
-                                ].map((feature, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-400/50"
-                                    >
-                                        <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
-                                            <i data-lucide={feature.icon} className="w-7 h-7 text-white"></i>
-                                        </div>
-                                        <h3 className="text-xl font-medium mb-3">{feature.title}</h3>
-                                        <p className="text-slate-400 leading-relaxed">{feature.description}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Trust Badges */}
-                    <div className="relative py-16 border-t border-white/10">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                                {[
-                                    { label: "RERA", sublabel: "Registered" },
-                                    { label: "Legal", sublabel: "Verified Properties" },
-                                    { label: "24/7", sublabel: "Support Available" },
-                                    { label: "EMI", sublabel: "Assistance" }
-                                ].map((badge, idx) => (
-                                    <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-amber-400/50 transition-all">
-                                        <div className="text-2xl font-light text-amber-400 mb-2">{badge.label}</div>
-                                        <div className="text-sm text-slate-400">{badge.sublabel}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Footer */}
-                    <footer className="relative py-12 border-t border-white/10 bg-slate-900/50">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                            <div className="mb-4">
-                                <div className="flex items-center justify-center gap-2 text-amber-400 mb-3">
-                                    <i data-lucide="building-2" className="w-6 h-6"></i>
-                                    <span className="text-xl font-semibold">Premium Properties</span>
-                                </div>
-                                <p className="text-slate-300 mb-2 flex items-center justify-center gap-2">
-                                    <i data-lucide="map-pin" className="w-4 h-4"></i>
-                                    Ranchi, Jharkhand
-                                </p>
-                                <p className="text-slate-400 text-sm">Serving Ranchi and surrounding areas</p>
-                            </div>
-                            <div className="pt-6 border-t border-white/10">
-                                <p className="text-slate-400 text-sm">© 2024 Premium Properties Ranchi. All rights reserved.</p>
-                            </div>
-                        </div>
-                    </footer>
                 </div>
-            );
-        };
 
-        ReactDOM.render(<LuxuryRealEstateLanding />, document.getElementById('root'));
+                <div class="animate-fade-in-delay">
+                    <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+                        <div class="text-center mb-8">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl mb-4 shadow-lg shadow-amber-500/30">
+                                <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h2 class="text-3xl font-light mb-2">Get Started Today</h2>
+                            <p class="text-slate-300">Connect with our property experts</p>
+                        </div>
+
+                        <form id="leadForm" class="space-y-5">
+                            <div>
+                                <label class="block text-sm text-slate-200 mb-2 font-medium">Full Name *</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400"
+                                    placeholder="Enter your name"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-slate-200 mb-2 font-medium">Email Address *</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400"
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-slate-200 mb-2 font-medium">Phone Number *</label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400"
+                                    placeholder="+91 98765 43210"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-slate-200 mb-2 font-medium">I'm Looking To *</label>
+                                <select
+                                    name="propertyType"
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white"
+                                >
+                                    <option value="buy" class="bg-slate-800">Buy a Property</option>
+                                    <option value="sell" class="bg-slate-800">Sell a Property</option>
+                                    <option value="rent" class="bg-slate-800">Rent a Property</option>
+                                    <option value="invest" class="bg-slate-800">Investment Opportunity</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-slate-200 mb-2 font-medium">Budget Range *</label>
+                                <select
+                                    name="budget"
+                                    required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white"
+                                >
+                                    <option value="" class="bg-slate-800">Select your budget</option>
+                                    <option value="20-40" class="bg-slate-800">₹20 Lakh - ₹40 Lakh</option>
+                                    <option value="40-60" class="bg-slate-800">₹40 Lakh - ₹60 Lakh</option>
+                                    <option value="60-80" class="bg-slate-800">₹60 Lakh - ₹80 Lakh</option>
+                                    <option value="80-1cr" class="bg-slate-800">₹80 Lakh - ₹1 Crore</option>
+                                    <option value="1cr-2cr" class="bg-slate-800">₹1 Crore - ₹2 Crore</option>
+                                    <option value="2cr+" class="bg-slate-800">₹2 Crore+</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-slate-200 mb-2 font-medium">Message (Optional)</label>
+                                <textarea
+                                    name="message"
+                                    rows="3"
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-amber-400 focus:bg-white/15 transition-all text-white placeholder-slate-400 resize-none"
+                                    placeholder="Tell us about your requirements..."
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-300 shadow-lg shadow-amber-500/40 hover:shadow-amber-500/60 hover:scale-[1.02] active:scale-[0.98]"
+                            >
+                                Schedule Free Consultation
+                            </button>
+
+                            <p class="text-xs text-slate-400 text-center leading-relaxed">
+                                By submitting, you agree to receive updates about properties and market insights. Your information is secure and confidential.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Showcase -->
+        <div class="relative py-20 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-light mb-4">Featured Properties</h2>
+                    <p class="text-slate-400 text-lg">Explore our handpicked selection</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8" id="properties">
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" 
+                                alt="Luxury Villa"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-xl font-medium mb-1 text-white">Luxury Villa</h3>
+                                <p class="text-sm text-slate-300 flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Harmu, Ranchi
+                                </p>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                ₹2.5 Cr
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" 
+                                alt="Modern Apartment"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-xl font-medium mb-1 text-white">Modern Apartment</h3>
+                                <p class="text-sm text-slate-300 flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Morabadi, Ranchi
+                                </p>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                ₹65 Lakh
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" 
+                                alt="Penthouse Suite"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-xl font-medium mb-1 text-white">Penthouse Suite</h3>
+                                <p class="text-sm text-slate-300 flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Ashok Nagar, Ranchi
+                                </p>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                ₹1.8 Cr
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="relative py-20 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-light mb-4">Why Choose Us</h2>
+                    <p class="text-slate-400 text-lg">Your trusted partner in Ranchi real estate</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8" id="features">
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-400/50">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
+                            <i data-lucide="map-pin" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3">Premium Locations</h3>
+                        <p class="text-slate-400 leading-relaxed">Access to properties in Ranchi's most desirable areas including Harmu, Morabadi, Ashok Nagar, and upcoming localities.</p>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-400/50">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
+                            <i data-lucide="award" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3">Expert Guidance</h3>
+                        <p class="text-slate-400 leading-relaxed">Our experienced team provides comprehensive support from property selection to documentation and legal clearance.</p>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-400/50">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
+                            <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3">Transparent Pricing</h3>
+                        <p class="text-slate-400 leading-relaxed">No hidden costs. We provide clear, competitive pricing with detailed property reports and market analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="relative py-16 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="badges">
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-amber-400/50 transition-all">
+                        <div class="text-2xl font-light text-amber-400 mb-2">RERA</div>
+                        <div class="text-sm text-slate-400">Registered</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-amber-400/50 transition-all">
+                        <div class="text-2xl font-light text-amber-400 mb-2">Legal</div>
+                        <div class="text-sm text-slate-400">Verified Properties</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-amber-400/50 transition-all">
+                        <div class="text-2xl font-light text-amber-400 mb-2">24/7</div>
+                        <div class="text-sm text-slate-400">Support Available</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-amber-400/50 transition-all">
+                        <div class="text-2xl font-light text-amber-400 mb-2">EMI</div>
+                        <div class="text-sm text-slate-400">Assistance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="relative py-12 border-t border-white/10 bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="mb-4">
+                    <div class="flex items-center justify-center gap-2 text-amber-400 mb-3">
+                        <i data-lucide="building-2" class="w-6 h-6"></i>
+                        <span class="text-xl font-semibold">Premium Properties</span>
+                    </div>
+                    <p class="text-slate-300 mb-2 flex items-center justify-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        Ranchi, Jharkhand
+                    </p>
+                    <p class="text-slate-400 text-sm">Serving Ranchi and surrounding areas</p>
+                </div>
+                <div class="pt-6 border-t border-white/10">
+                    <p class="text-slate-400 text-sm">© 2024 Premium Properties Ranchi. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Meta Pixel Code
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // ⚠️ IMPORTANT: Replace 'YOUR_PIXEL_ID' with your actual Meta Pixel ID
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+
+        // Form submission handler
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Meta Pixel - Track Lead Event
+            if (window.fbq) {
+                fbq('track', 'Lead', {
+                    content_name: 'Real Estate Inquiry',
+                    content_category: data.propertyType,
+                    value: data.budget,
+                    currency: 'INR'
+                });
+            }
+            
+            // Here you can send data to your backend/CRM
+            console.log('Form Data:', data);
+            
+            // Redirect to thank-you page
+            window.location.href = 'thank-you.html';
+        });
     </script>
+
+    <!-- Meta Pixel Code (noscript) -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
 </body>
 </html>
