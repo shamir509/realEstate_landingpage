@@ -1,98 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Properties Dubai - Find Your Dream Home in UAE</title>
-    <meta name="description" content="Discover premium residential and commercial properties in Dubai. Luxury villas, apartments and penthouses in Downtown, Marina, Palm Jumeirah.">
-    
+    <meta name="description"
+        content="Discover premium residential and commercial properties in Dubai. Luxury villas, apartments and penthouses in Downtown, Marina, Palm Jumeirah.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
+
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
+
         @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
+            0% {
+                background-position: -1000px 0;
+            }
+
+            100% {
+                background-position: 1000px 0;
+            }
         }
+
         .animate-shimmer {
             animation: shimmer 3s infinite;
             background: linear-gradient(to right, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
             background-size: 1000px 100%;
         }
     </style>
+
+    <!-- meta pixel -->
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1439052234892590');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1439052234892590&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
+
 <body class="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
     <div class="min-h-screen">
         <!-- Hero Section -->
         <div class="relative min-h-screen flex items-center overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img 
-                    src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80" 
-                    alt="Dubai Skyline"
-                    class="w-full h-full object-cover opacity-30"
-                />
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80" alt="Dubai Skyline"
+                    class="w-full h-full object-cover opacity-30" />
                 <div class="absolute inset-0 bg-gradient-to-br from-amber-50/95 via-orange-50/90 to-yellow-50/95"></div>
             </div>
 
             <div class="absolute inset-0 overflow-hidden z-0">
-                <div class="absolute w-96 h-96 bg-amber-300/30 rounded-full blur-3xl -top-48 -left-48 animate-float"></div>
-                <div class="absolute w-96 h-96 bg-orange-300/30 rounded-full blur-3xl -bottom-48 -right-48 animate-float" style="animation-delay: 2s;"></div>
-                <div class="absolute w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float" style="animation-delay: 4s;"></div>
+                <div class="absolute w-96 h-96 bg-amber-300/30 rounded-full blur-3xl -top-48 -left-48 animate-float">
+                </div>
+                <div class="absolute w-96 h-96 bg-orange-300/30 rounded-full blur-3xl -bottom-48 -right-48 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float"
+                    style="animation-delay: 4s;"></div>
             </div>
 
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center z-10">
+            <div
+                class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center z-10">
                 <div class="animate-fade-in">
-                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 px-5 py-2.5 rounded-full shadow-lg mb-6">
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 px-5 py-2.5 rounded-full shadow-lg mb-6">
                         <i data-lucide="award" class="w-5 h-5 text-white"></i>
                         <span class="text-sm font-semibold text-white">Dubai's Premier Real Estate</span>
                     </div>
-                    
+
                     <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-slate-900">
                         Own Your
-                        <span class="block bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text text-transparent">
+                        <span
+                            class="block bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text text-transparent">
                             Dubai Dream
                         </span>
                     </h1>
-                    
+
                     <p class="text-xl text-slate-700 mb-8 leading-relaxed max-w-xl font-medium">
-                        Experience luxury living in Dubai's most prestigious locations. From stunning waterfront apartments to iconic penthouses with Burj Khalifa views - your dream property awaits.
+                        Experience luxury living in Dubai's most prestigious locations. From stunning waterfront
+                        apartments to iconic penthouses with Burj Khalifa views - your dream property awaits.
                     </p>
 
                     <div class="grid grid-cols-3 gap-6 mb-12">
                         <div class="text-center bg-white rounded-2xl p-5 shadow-xl border-2 border-amber-200">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-1">500+</div>
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-1">
+                                500+</div>
                             <div class="text-xs text-slate-600 font-semibold">Premium Properties</div>
                         </div>
                         <div class="text-center bg-white rounded-2xl p-5 shadow-xl border-2 border-amber-200">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-1">₹2000Cr+</div>
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-1">
+                                ₹2000Cr+</div>
                             <div class="text-xs text-slate-600 font-semibold">Properties Sold</div>
                         </div>
                         <div class="text-center bg-white rounded-2xl p-5 shadow-xl border-2 border-amber-200">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-1">98%</div>
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-1">
+                                98%</div>
                             <div class="text-xs text-slate-600 font-semibold">Happy Clients</div>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-4">
-                        <div class="flex items-center gap-2 text-slate-800 bg-white px-5 py-3 rounded-full shadow-lg border-2 border-amber-200">
+                        <div
+                            class="flex items-center gap-2 text-slate-800 bg-white px-5 py-3 rounded-full shadow-lg border-2 border-amber-200">
                             <i data-lucide="map-pin" class="w-5 h-5 text-amber-600"></i>
                             <span class="text-sm font-semibold">Prime Dubai Locations</span>
                         </div>
-                        <div class="flex items-center gap-2 text-slate-800 bg-white px-5 py-3 rounded-full shadow-lg border-2 border-amber-200">
+                        <div
+                            class="flex items-center gap-2 text-slate-800 bg-white px-5 py-3 rounded-full shadow-lg border-2 border-amber-200">
                             <i data-lucide="trending-up" class="w-5 h-5 text-amber-600"></i>
                             <span class="text-sm font-semibold">High ROI</span>
                         </div>
-                        <div class="flex items-center gap-2 text-slate-800 bg-white px-5 py-3 rounded-full shadow-lg border-2 border-amber-200">
+                        <div
+                            class="flex items-center gap-2 text-slate-800 bg-white px-5 py-3 rounded-full shadow-lg border-2 border-amber-200">
                             <i data-lucide="home" class="w-5 h-5 text-amber-600"></i>
                             <span class="text-sm font-semibold">DLD Approved</span>
                         </div>
@@ -102,7 +154,8 @@
                 <div class="animate-fade-in-delay">
                     <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-amber-300">
                         <div class="text-center mb-8">
-                            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl mb-4 shadow-xl">
+                            <div
+                                class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl mb-4 shadow-xl">
                                 <i data-lucide="sparkles" class="w-10 h-10 text-white"></i>
                             </div>
                             <h2 class="text-3xl font-bold mb-2 text-slate-900">Start Your Journey</h2>
@@ -112,43 +165,29 @@
                         <form id="leadForm" class="space-y-5">
                             <div>
                                 <label class="block text-sm text-slate-700 mb-2 font-bold">Full Name *</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    required
+                                <input type="text" name="name" required
                                     class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 placeholder-slate-500 font-medium"
-                                    placeholder="Enter your name"
-                                />
+                                    placeholder="Enter your name" />
                             </div>
 
                             <div>
                                 <label class="block text-sm text-slate-700 mb-2 font-bold">Email Address *</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
+                                <input type="email" name="email" required
                                     class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 placeholder-slate-500 font-medium"
-                                    placeholder="your@email.com"
-                                />
+                                    placeholder="your@email.com" />
                             </div>
 
                             <div>
                                 <label class="block text-sm text-slate-700 mb-2 font-bold">Phone Number *</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    required
+                                <input type="tel" name="phone" required
                                     class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 placeholder-slate-500 font-medium"
-                                    placeholder="+971 50 123 4567"
-                                />
+                                    placeholder="+971 50 123 4567" />
                             </div>
 
                             <div>
                                 <label class="block text-sm text-slate-700 mb-2 font-bold">I'm Looking To *</label>
-                                <select
-                                    name="propertyType"
-                                    class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 font-medium"
-                                >
+                                <select name="propertyType"
+                                    class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 font-medium">
                                     <option value="buy">Buy a Property in Dubai</option>
                                     <option value="sell">Sell My Dubai Property</option>
                                     <option value="rent">Rent in Dubai</option>
@@ -158,11 +197,8 @@
 
                             <div>
                                 <label class="block text-sm text-slate-700 mb-2 font-bold">Budget Range (INR) *</label>
-                                <select
-                                    name="budget"
-                                    required
-                                    class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 font-medium"
-                                >
+                                <select name="budget" required
+                                    class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 font-medium">
                                     <option value="">Select your budget</option>
                                     <option value="20-40">₹20 Lakh - ₹40 Lakh</option>
                                     <option value="40-60">₹40 Lakh - ₹60 Lakh</option>
@@ -175,23 +211,19 @@
 
                             <div>
                                 <label class="block text-sm text-slate-700 mb-2 font-bold">Message (Optional)</label>
-                                <textarea
-                                    name="message"
-                                    rows="3"
+                                <textarea name="message" rows="3"
                                     class="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white transition-all text-slate-900 placeholder-slate-500 resize-none font-medium"
-                                    placeholder="Tell us about your Dubai property requirements..."
-                                ></textarea>
+                                    placeholder="Tell us about your Dubai property requirements..."></textarea>
                             </div>
 
-                            <button
-                                type="submit"
-                                class="w-full py-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white rounded-xl font-bold text-lg hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 transition-all duration-300 shadow-2xl hover:shadow-amber-500/50 hover:scale-[1.02] active:scale-[0.98]"
-                            >
+                            <button type="submit"
+                                class="w-full py-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white rounded-xl font-bold text-lg hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 transition-all duration-300 shadow-2xl hover:shadow-amber-500/50 hover:scale-[1.02] active:scale-[0.98]">
                                 Get Free Dubai Property Consultation
                             </button>
 
                             <p class="text-xs text-slate-600 text-center leading-relaxed font-medium">
-                                By submitting, you agree to receive updates about Dubai properties and market insights. Your information is secure and confidential.
+                                By submitting, you agree to receive updates about Dubai properties and market insights.
+                                Your information is secure and confidential.
                             </p>
                         </form>
                     </div>
@@ -208,14 +240,15 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8" id="properties">
-                    <div class="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div
+                        class="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div class="relative h-64 overflow-hidden">
-                            <img 
-                                src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80" 
+                            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80"
                                 alt="Dubai Marina Penthouse"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent">
+                            </div>
                             <div class="absolute bottom-4 left-4 right-4">
                                 <h3 class="text-2xl font-bold mb-1 text-white">Marina Penthouse</h3>
                                 <p class="text-sm text-amber-200 flex items-center gap-1 font-semibold">
@@ -223,20 +256,22 @@
                                     Dubai Marina
                                 </p>
                             </div>
-                            <div class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
+                            <div
+                                class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
                                 ₹2.5 Cr
                             </div>
                         </div>
                     </div>
 
-                    <div class="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div
+                        class="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div class="relative h-64 overflow-hidden">
-                            <img 
-                                src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80" 
+                            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
                                 alt="Downtown Dubai Apartment"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent">
+                            </div>
                             <div class="absolute bottom-4 left-4 right-4">
                                 <h3 class="text-2xl font-bold mb-1 text-white">Downtown Luxury</h3>
                                 <p class="text-sm text-amber-200 flex items-center gap-1 font-semibold">
@@ -244,20 +279,22 @@
                                     Downtown Dubai
                                 </p>
                             </div>
-                            <div class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
+                            <div
+                                class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
                                 ₹65 Lakh
                             </div>
                         </div>
                     </div>
 
-                    <div class="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div
+                        class="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div class="relative h-64 overflow-hidden">
-                            <img 
-                                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" 
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80"
                                 alt="Palm Jumeirah Villa"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent">
+                            </div>
                             <div class="absolute bottom-4 left-4 right-4">
                                 <h3 class="text-2xl font-bold mb-1 text-white">Palm Jumeirah Villa</h3>
                                 <p class="text-sm text-amber-200 flex items-center gap-1 font-semibold">
@@ -265,7 +302,8 @@
                                     Palm Jumeirah
                                 </p>
                             </div>
-                            <div class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
+                            <div
+                                class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
                                 ₹1.8 Cr
                             </div>
                         </div>
@@ -283,28 +321,38 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8" id="features">
-                    <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105">
-                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center mb-6 shadow-xl">
+                    <div
+                        class="bg-white rounded-3xl p-8 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center mb-6 shadow-xl">
                             <i data-lucide="map-pin" class="w-8 h-8 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-slate-900">Iconic Locations</h3>
-                        <p class="text-slate-600 leading-relaxed font-medium">Access to properties in Dubai's most prestigious areas including Dubai Marina, Downtown Dubai, Palm Jumeirah, Business Bay, and JBR.</p>
+                        <p class="text-slate-600 leading-relaxed font-medium">Access to properties in Dubai's most
+                            prestigious areas including Dubai Marina, Downtown Dubai, Palm Jumeirah, Business Bay, and
+                            JBR.</p>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105">
-                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center mb-6 shadow-xl">
+                    <div
+                        class="bg-white rounded-3xl p-8 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center mb-6 shadow-xl">
                             <i data-lucide="award" class="w-8 h-8 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-slate-900">UAE Expert Team</h3>
-                        <p class="text-slate-600 leading-relaxed font-medium">Our Dubai-based experts provide comprehensive support from property selection to visa assistance and DLD documentation.</p>
+                        <p class="text-slate-600 leading-relaxed font-medium">Our Dubai-based experts provide
+                            comprehensive support from property selection to visa assistance and DLD documentation.</p>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105">
-                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center mb-6 shadow-xl">
+                    <div
+                        class="bg-white rounded-3xl p-8 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center mb-6 shadow-xl">
                             <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-slate-900">Investment ROI</h3>
-                        <p class="text-slate-600 leading-relaxed font-medium">Dubai offers tax-free income, high rental yields (6-8%), and strong capital appreciation. Perfect for long-term investment.</p>
+                        <p class="text-slate-600 leading-relaxed font-medium">Dubai offers tax-free income, high rental
+                            yields (6-8%), and strong capital appreciation. Perfect for long-term investment.</p>
                     </div>
                 </div>
             </div>
@@ -314,19 +362,23 @@
         <div class="relative py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="badges">
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
                         <div class="text-3xl font-bold text-amber-600 mb-2">DLD</div>
                         <div class="text-sm text-slate-700 font-bold">Approved Agent</div>
                     </div>
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
                         <div class="text-3xl font-bold text-amber-600 mb-2">Legal</div>
                         <div class="text-sm text-slate-700 font-bold">UAE Verified</div>
                     </div>
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
                         <div class="text-3xl font-bold text-amber-600 mb-2">24/7</div>
                         <div class="text-sm text-slate-700 font-bold">Dubai Support</div>
                     </div>
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-4 border-amber-200 hover:border-amber-400 transition-all">
                         <div class="text-3xl font-bold text-amber-600 mb-2">Finance</div>
                         <div class="text-sm text-slate-700 font-bold">UAE Bank Tie-ups</div>
                     </div>
@@ -360,27 +412,30 @@
         lucide.createIcons();
 
         // Meta Pixel Code
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+
         // ⚠️ IMPORTANT: Replace 'YOUR_PIXEL_ID' with your actual Meta Pixel ID
         fbq('init', 'YOUR_PIXEL_ID');
         fbq('track', 'PageView');
 
         // Form submission handler
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
+        document.getElementById('leadForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
             // Meta Pixel - Track Lead Event
             if (window.fbq) {
                 fbq('track', 'Lead', {
@@ -390,10 +445,10 @@
                     currency: 'INR'
                 });
             }
-            
+
             // Here you can send data to your backend/CRM
             console.log('Form Data:', data);
-            
+
             // Redirect to thank-you page
             window.location.href = 'thank-you.html';
         });
@@ -401,7 +456,7 @@
 
     <!-- Meta Pixel Code (noscript) -->
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
 </body>
+
 </html>
